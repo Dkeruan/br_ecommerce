@@ -19,10 +19,11 @@ WHERE i.seller_id IS NOT NULL
 ORDER BY sales DESC
 
 
-/* There are orders within the orders table that do not have corresponding 
-rows in the order_items table which contains information about the items bought.
-Hence, we are unable to know which sellers are responsible for these orders. 
-We will plot the market distribution using the orders with known information. */
+/* Some orders in the `df_orders` table do not have matching rows in the 
+`df_order_items` table, which provides details about the purchased items. 
+As a result, we cannot identify the sellers responsible for these orders. 
+Therefore, we will focus on analyzing the market distribution using only 
+the orders with complete information. */
 
 
 -- Total sales per seller and their percentage of the Health & beauty products market
