@@ -74,7 +74,7 @@ CREATE TABLE df_order_reviews (
 );
 
 -- Table for olist_geolocation_dataset.csv
-CREATE TABLE df_geolocation (
+CREATE TABLE df_geolocations (
     geolocation_zip_code_prefix INT,
     geolocation_lat FLOAT,
     geolocation_lng FLOAT,

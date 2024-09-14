@@ -30,6 +30,10 @@ COPY df_name_translation (product_category_name, product_category_name_english)
 FROM 'C:\Users\dkeru\Desktop\portfolio\br_ecommerce\tables\product_category_name_translation.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
+COPY df_geolocations (geolocation_zip_code_prefix, geolocation_lat,geolocation_lng,geolocation_city,geolocation_state)
+FROM 'C:\Users\dkeru\Desktop\portfolio\br_ecommerce\tables\olist_geolocation_dataset.csv'
+WITH(FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+
 --DELETE ALL TABLES
 DO $$ DECLARE
     r RECORD;
@@ -41,3 +45,4 @@ END $$;
 
 --DUPLICATES FOUND IN REVIEW_ID, TEMPORARILY DROPPING THE UNIQUE CONSTRAINT
 ALTER TABLE df_order_reviews DROP CONSTRAINT df_order_reviews_pkey;
+ALTER TABLE df_geolocations DROP CONSTRAINT df_geolocations_pkey;
